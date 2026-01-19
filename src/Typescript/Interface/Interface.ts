@@ -38,6 +38,7 @@ export interface ProductState {
 // Context type
 export interface ProductContextType {
   productsState: ProductState;
+  handleDispatch:AddProduct;
   handleIncrease: (item: CartItem) => void;
   handleDecrase: (item: CartItem) => void;
   handleRemove: (item: CartItem) => void;
