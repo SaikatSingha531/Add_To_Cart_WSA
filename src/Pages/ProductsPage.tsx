@@ -18,7 +18,7 @@ const ProductsPage = () => {
         {productsData.map((product) => (
           <div
             key={product.id}
-            className="bg-white rounded-2xl shadow-lg p-6 flex gap-5 min-h-[190px]"
+            className="bg-white rounded-2xl shadow-lg p-6 flex gap-5 min-h-[190px] hover:bg-gray-50 "
           >
             <div className="flex items-center">
               <img
@@ -47,8 +47,7 @@ const ProductsPage = () => {
                 </div>
 
                 <button
-                  onClick={() => addProducts(product)}
-                  className="bg-orange-500 text-white px-5 py-2 rounded-full text-sm font-semibold"
+                  onClick={() => addProducts(product)} className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-5 py-2 rounded-full text-sm font-semibold hover:from-orange-600 hover:to-orange-700 transition-all duration-300 hover:scale-110 active:scale-95 shadow-md"
                 >
                   ADD TO CART +
                 </button>
