@@ -2,12 +2,12 @@ import { useContext } from "react";
 import productsData from "../Services/Json/Products";
 import { ProductContext } from "../Hooks/Context/CreateProductContext";
 import { toast } from "sonner";
-import type { AddProduct } from "../Typescript/Interface/Interface";
+import type { Product } from "../Typescript/Interface/Interface";
 
 const ProductsPage = () => {
   const { handleDispatch } = useContext(ProductContext);
 
-  const addProducts = (product:AddProduct) => {
+  const addProducts = (product: Product): void => {
     handleDispatch(product);
     toast.success("Item Added Successfully");
   };
@@ -18,26 +18,20 @@ const ProductsPage = () => {
         {productsData.map((product) => (
           <div
             key={product.id}
-            className="bg-white rounded-2xl shadow-lg p-6 flex gap-5 
-            hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 
-            min-h-[190px]"
+            className="bg-white rounded-2xl shadow-lg p-6 flex gap-5 min-h-[190px]"
           >
-            {/* Image */}
             <div className="flex items-center">
               <img
                 src={product.image}
                 alt={product.name}
-                className="w-24 h-24 rounded-xl object-cover shadow-md"
+                className="w-24 h-24 rounded-xl object-cover"
               />
             </div>
 
-            {/* Content */}
             <div className="flex flex-col justify-between flex-1">
               <div>
-                <h3 className="font-bold text-xl text-gray-800">
-                  {product.name}
-                </h3>
-                <p className="text-sm text-gray-500 mt-1 leading-relaxed">
+                <h3 className="font-bold text-xl">{product.name}</h3>
+                <p className="text-sm text-gray-500 mt-1">
                   {product.description}
                 </p>
               </div>
@@ -54,11 +48,7 @@ const ProductsPage = () => {
 
                 <button
                   onClick={() => addProducts(product)}
-                  className="bg-gradient-to-r from-orange-500 to-orange-600 
-                  text-white px-5 py-2 rounded-full text-sm font-semibold
-                  hover:from-orange-600 hover:to-orange-700
-                  transition-all duration-300 
-                  hover:scale-110 active:scale-95 shadow-md"
+                  className="bg-orange-500 text-white px-5 py-2 rounded-full text-sm font-semibold"
                 >
                   ADD TO CART +
                 </button>

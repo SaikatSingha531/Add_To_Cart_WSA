@@ -1,3 +1,4 @@
+import type { Product } from "../../Typescript/Interface/Interface"
 import one from "../../assets/Fone.jpg"
 import two from "../../assets/adfgag.jpg"
 import three from "../../assets/afga.jpg"
@@ -10,7 +11,7 @@ import nine from "../../assets/fasdf.jpg"
 
 
 
-const productsData = [
+const productsData: Product[] = [
   {
     "id": 1,
     "name": "Margherita Pizza",
